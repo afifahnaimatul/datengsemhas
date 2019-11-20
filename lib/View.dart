@@ -141,28 +141,37 @@ class ScheduleState extends State <Schedule>{
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(vertical: 16),
-      child: Column(
-      children: <Widget>[
-        new Row(
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child:Column(
           children: <Widget>[
-            new Icon(Icons.person, size: 40,),
-            new Column(
-            children: <Widget>[
-              Text('Nama saya adalah sesuatu'),
-              Text('175150200000000')
-            ],
-          )
-        
-        ],
-        
+            new Row(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(right: 16),
+                  width: 50,
+                  height: 50,
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage("https://i.pinimg.com/originals/64/71/47/647147ccec441a94063e46e253667f9c.jpg"),
+                    radius: 32,
+                  ),
+                ),
+                new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('Katie Smith'),
+                    Text('175150200000000')
+                  ],
+                )
+              ]
+            ),
+            Padding(padding: EdgeInsets.all(8)),
+            Text('Sebuah tulisan yang menandakan adanya sebuah tulisan di dalam sebuah card yang dapat mendefinisikan sesuatu', )
+          ],
+        )
       ),
-      Text('Sebuah tulisan yang menandakan adanya sebuah tulisan di dalam sebuah card yang dapat mendefinisikan sesuatu', )
-      ],
-      )
-
     );
   }
-
 }
 
 
@@ -249,31 +258,40 @@ class Booked extends StatefulWidget{
 }
 
 class BookedState extends State <Booked>{
+  Widget tampilkan = Container(
+      child: Row(
+        children: <Widget>[
+          Icon(Icons.work, size: 20),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 12.0)),
+          Text("teks", style: TextStyle(fontSize: 14)),
+        ],
+      )
+    );
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Column(
-      children: <Widget>[
-        new Row(
-          children: <Widget>[
-            new Icon(Icons.person, size: 40,),
-            new Column(
-            children: <Widget>[
-              Text('Nama saya adalah sesuatu'),
-              Text('175150200000000')
-            ],
-          )
-        
+      child: Row(
+        children: <Widget>[
+          Image.asset("img/pict.jpg", fit: BoxFit.fitHeight, height: 120, width: 100,),
+          Padding(padding: EdgeInsets.all(4)),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text("Juduuuuuuuuuuuuuuuuuuuuuul", style: TextStyle(fontSize: 20)),
+                tampilkan,
+                tampilkan,
+                tampilkan,
+            ],)
+          ),
+          // Text("Lorem Ipsum super panjang breh")
+          //CSearchKerja(),
         ],
-        
-      ),
-      Text('Sebuah tulisan yang menandakan adanya sebuah tulisan di dalam sebuah card yang dapat mendefinisikan sesuatu', )
-      ],
       )
-
     );
   }
-
 }
 
 
