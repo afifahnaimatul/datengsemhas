@@ -3,6 +3,7 @@ import 'package:oke/view/ViewProfile.dart';
 import 'package:oke/view/ViewSchedule.dart';
 import 'package:oke/view/ViewBooked.dart';
 import 'package:oke/view/ViewHistory.dart';
+import 'package:oke/view/AddSchedule.dart';
 
 class LoginPage extends StatefulWidget{
     static String tag = 'login-page';
@@ -14,14 +15,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final email = TextFormField(
-      keyboardType: TextInputType.emailAddress,
+      //keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: 'name@email.com',
       decoration: InputDecoration(
-        hintText: 'Email',
+        hintText: 'NIM',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
+      validator: (value) => value.isEmpty? 'NIM required' : null,
+      // onSaved: (value) => 
     );
 
     final password = TextFormField(
@@ -140,6 +142,13 @@ class PagesState extends State<Pages> {
           ], 
         ),  
       bottomNavigationBar: navBar,
+      floatingActionButton: new FloatingActionButton(
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context){
+          return AddSchedule();
+        })),
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
+      ),
     );
   }
 }
