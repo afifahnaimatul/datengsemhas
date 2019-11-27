@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oke/Presenter.dart';
-import 'package:oke/View.dart';
+import 'package:oke/presenter/Presenter.dart';
+import 'package:oke/view/Login.dart';
+import 'package:oke/view/View.dart';
 
 void main() => runApp(new MyApp());
 
