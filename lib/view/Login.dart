@@ -4,6 +4,7 @@ import 'package:oke/view/ViewSchedule.dart';
 import 'package:oke/view/ViewBooked.dart';
 import 'package:oke/view/ViewHistory.dart';
 import 'package:oke/view/AddSchedule.dart';
+import 'package:oke/services/auth.dart';
 
 class LoginPage extends StatefulWidget{
     static String tag = 'login-page';
@@ -12,6 +13,9 @@ class LoginPage extends StatefulWidget{
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     final email = TextFormField(
@@ -52,6 +56,27 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
 
+    final loginAnonButton = Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(  
+          borderRadius: BorderRadius.circular(24),
+        ),
+        onPressed: () async {
+          dynamic result = await _auth.signInAnon();
+          if(result == null){
+            print('error signing in');
+          } else{
+            print('signed in');
+            print(result);
+          }
+        },
+        padding: EdgeInsets.all(12),
+        color: Colors.lightBlueAccent,
+        child: Text('Log In Anonimously', style: TextStyle(color: Colors.white)),
+      ),
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -65,6 +90,7 @@ class _LoginPageState extends State<LoginPage> {
             password,
             SizedBox(height: 24.0),
             loginButton,
+            loginAnonButton
           ],
         ),
       ),
