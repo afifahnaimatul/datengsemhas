@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "808815104603",
+    "firebase_url": "https://datangsemhas.firebaseio.com",
+    "project_id": "datangsemhas",
+    "storage_bucket": "datangsemhas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808815104603:android:485692770d904cf603a57e",
+        "android_client_info": {
+          "package_name": "id.kuliah.datangsemhas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808815104603-9aapf560pvfbnmhh015f35jacdmi0j1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1iU1oREaxY6EAxRY9NEHk5I6BUNQiCKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808815104603-9aapf560pvfbnmhh015f35jacdmi0j1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
